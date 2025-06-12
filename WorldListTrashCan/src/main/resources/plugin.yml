@@ -1,5 +1,5 @@
 name: WorldListTrashCan
-version: 6.3.0
+version: ${version}
 main: org.worldlisttrashcan.WorldListTrashCan
 author: BlueNine QQ 2831508831
 api-version: '1.13'
@@ -7,7 +7,11 @@ folia-supported: true
 softdepend:
   - Vault
   - PlaceholderAPI
-
+libraries:
+  - "net.kyori:adventure-api:4.21.0"
+  - "net.kyori:adventure-platform-bukkit:4.4.0"
+  - "net.kyori:adventure-text-minimessage:4.21.0"
+  - "net.kyori:adventure-text-serializer-plain:4.21.0"
 commands:
   WorldListTrashCan:
     description: WorldListTrashCan插件主指令
