@@ -23,7 +23,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.worldlisttrashcan.AutoTrashMain.AutoTrashListener;
 import org.worldlisttrashcan.AutoTrashMain.HeightVersionPlayerDropItemListener;
-import org.worldlisttrashcan.Bstats.Metrics;
 import org.worldlisttrashcan.DropSystem.DropLimitListener;
 import org.worldlisttrashcan.Method.Method;
 import org.worldlisttrashcan.Method.SendMessageAbstract;
@@ -179,23 +178,6 @@ public final class WorldListTrashCan extends JavaPlugin {
 //    LimitMain limitMain = new LimitMain();
     @Override
     public void onEnable() {
-
-        int pluginId = 24350; // <-- Replace with the id of your plugin!
-//        Metrics metrics = new Metrics(this, pluginId);
-        Metrics metrics = new Metrics(this, pluginId);
-        metrics.addCustomChart(new Metrics.SingleLineChart("players",
-                () -> Bukkit.getOnlinePlayers().size()
-                ));
-        metrics.addCustomChart(new Metrics.SingleLineChart("servers", () ->1));
-        metrics.addCustomChart(new Metrics.MultiLineChart("players_and_servers", () -> {
-            Map<String, Integer> valueMap = new HashMap<>();
-            valueMap.put("servers", 1);
-            valueMap.put("players", Bukkit.getOnlinePlayers().size());
-            return valueMap;
-        }));
-
-//        metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
-
         // Plugin startup logic
         main = this;
         worldListTrashCan = this;
